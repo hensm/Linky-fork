@@ -1,8 +1,8 @@
-content linky jar:chrome/linky.jar!/content/
+content linky chrome/content/
 overlay chrome://browser/content/browser.xul chrome://linky/content/main.xul
 overlay chrome://navigator/content/navigator.xul chrome://linky/content/main.xul
-locale linky en-US jar:chrome/linky.jar!/locale/en-US/
-skin linky classic/1.0 jar:chrome/linky.jar!/skin/
+locale linky en-US chrome/locale/en-US/
+skin linky classic/1.0 chrome/skin/
 style chrome://browser/content/browser.xul chrome://linky/skin/main.css
 style chrome://navigator/content/navigator.xul chrome://linky/skin/main.css
 style chrome://global/content/customizeToolbar.xul chrome://linky/skin/main.css

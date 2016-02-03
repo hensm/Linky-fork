@@ -1,0 +1,4 @@
+#linky-toolbar {list-style-image: url(chrome://linky/skin/icon24.png)}
+toolbar[iconsize="small"] #linky-toolbar {list-style-image: url(chrome://linky/skin/icon16.png)}
+#linky-toolbar[type="menu"] {-moz-binding: url(chrome://global/content/bindings/toolbarbutton.xml#menu-vertical)}
+#linky-context {list-style-image: url(chrome://linky/skin/icon16.png)}

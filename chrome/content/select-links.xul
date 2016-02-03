@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE window SYSTEM "chrome://linky/locale/main.dtd">
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<window xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&linky-select-title.label;" width="400" height="330" persist="width height screenX screenY" onload="linkySelect.startup();" id="select-links">
+	<script src="select-links.js"/>
+	<keyset>
+		<key keycode="VK_ESCAPE" oncommand="window.close();"/>
+	</keyset>
+	<menupopup id="linkySelectContext" position="before_start">
+		<menuitem label="&linky-select-sort-URL.label;" oncommand="linkySelect.sortSelect(1);" tooltiptext="&linky-select-sort-URL.tooltip;"/>
+		<menuitem label="&linky-select-sort-host.label;" oncommand="linkySelect.sortSelect(3);" tooltiptext="&linky-select-sort-host.tooltip;"/>
+		<menuitem label="&linky-select-sort-org.label;" oncommand="linkySelect.sortSelect(2);" tooltiptext="&linky-select-sort-org.tooltip;"/>
+		<menuitem label="&linky-select-part.label;" oncommand="linkySelect.checkPartial(prompt('&linky-select-part-confirm.label;'), 1);" tooltiptext="&linky-select-part.tooltip;"/>
+		<menuitem label="&linky-select-partun.label;" oncommand="linkySelect.checkPartial(prompt('&linky-select-partun-confirm.label;'), 0);" tooltiptext="&linky-select-partun.tooltip;"/>
+		<menuitem label="&linky-select-unesc.label;" oncommand="linkySelect.unescLinks();" tooltiptext="&linky-select-unesc.tooltip;"/>
+		<menuitem label="&linky-select-markvisit.label;" oncommand="linkySelect.markVisited();" tooltiptext="&linky-select-markvisit.tooltip;"/>
+		<menuitem label="&linky-select-partremove.label;" oncommand="linkySelect.removePartial(prompt('&linky-select-partremove-confirm.label;'));" tooltiptext="&linky-select-partremove.tooltip;"/>
+		<menuitem label="&linky-select-invert.label;" oncommand="linkySelect.invertSelected();" tooltiptext="&linky-select-invert.tooltip;"/>
+		<menuitem label="&linky-select-clipboard-all.label;" oncommand="linkySelect.copyClipboard(1);" tooltiptext="&linky-select-clipboard-all.tooltip;"/>
+		<menuitem label="&linky-select-clipboard.label;" oncommand="linkySelect.copyClipboard();" tooltiptext="&linky-select-clipboard.tooltip;"/>
+		<menuitem label="&linky-select-bookmark.label;" oncommand="linkySelect.bookmarkLinks();" tooltiptext="&linky-select-bookmark.tooltip;"/>
+	</menupopup>
+ 	<groupbox flex="1">
+		<caption label="&linky-select-intro.label;" id="linky-select-intro"/>
+		<label value="" hidden="true" id="linky-select-info"/>
+		<box flex="1">
+			<listbox id="selectlinks" flex="1" context="linkySelectContext" onclick="linkySelect.doSelect(event)"></listbox>
+		</box>
+		<hbox>
+			<checkbox accesskey="&linky-select-checkall.accesskey;" checked="true" id="cbox" label="&linky-select-checkall.label;" oncommand="linkySelect.checkAll();" tooltiptext="&linky-select-checkall.tooltip;"/>
+			<checkbox accesskey="&linky-select-checkvisited.accesskey;" checked="true" id="cvbox" label="&linky-select-checkvisited.label;" oncommand="linkySelect.checkVisited();" tooltiptext="&linky-select-checkvisited.tooltip;"/>
+		</hbox>
+	</groupbox>
+ 	<groupbox id="linky-select-download" hidden="true">
+		<caption label="&linky-select-download.caption;"/>
+		<hbox align="center">
+			<filefield id="linky-select-download-dir" flex="1"/>
+			<button accesskey="&linky-select-download.accesskey;" label="&linky-select-download.label;" oncommand="linkySelect.doDir();" tooltiptext="&linky-select-download.tooltip;"/>
+		</hbox>
+	</groupbox>
+	<hbox>
+		<button label="&linky-select-commands.label;" popup="linkySelectContext" type="menu"/>
+		<spacer flex="1"/>
+		<button accesskey="&linky-select-openlinks.accesskey;" label="&linky-select-openlinks.label;" oncommand="linkySelect.openLinks();" tooltiptext="&linky-select-openlinks.tooltip;" id="linky-select-openlinks"/>
+		<button accesskey="&linky-select-cancel.accesskey;" label="&linky-select-cancel.label;" oncommand="self.close();" tooltiptext="&linky-select-cancel.tooltip;"/>
+	</hbox>
+</window>

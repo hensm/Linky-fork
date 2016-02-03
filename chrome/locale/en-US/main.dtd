@@ -1,0 +1,183 @@
+<!-- generic -->
+<!ENTITY linky.label "Linky">
+<!ENTITY linky.accesskey "l">
+
+<!-- clipboard -->
+<!ENTITY linky-context-clipboard-all.accesskey "">
+<!ENTITY linky-context-clipboard-all.label "Copy All Links to Clipboard">
+<!ENTITY linky-context-clipboard-all.tooltip "">
+<!ENTITY linky-context-clipboard-selected.accesskey "">
+<!ENTITY linky-context-clipboard-selected.label "Copy Selected Links to Clipboard">
+<!ENTITY linky-context-clipboard-selected.tooltip "">
+<!ENTITY linky-pref-context-clipboard.label "Copy links to clipboard">
+
+<!-- download -->
+<!ENTITY linky-context-download-all.accesskey "">
+<!ENTITY linky-context-download-all.label "Download All Links">
+<!ENTITY linky-context-download-all.tooltip "Download all links on page">
+<!ENTITY linky-context-download-selected.accesskey "">
+<!ENTITY linky-context-download-selected.label "Download Selected Links">
+<!ENTITY linky-context-download-selected.tooltip "Download selected links on page">
+<!ENTITY linky-pref-context-download.label "Download links">
+
+<!-- validate -->
+<!ENTITY linky-context-validate-all-tab.accesskey "">
+<!ENTITY linky-context-validate-all-tab.label "Validate All Links in tabs">
+<!ENTITY linky-context-validate-all-tab.tooltip "Validate all links on page in new tabs">
+<!ENTITY linky-context-validate-all-win.accesskey "">
+<!ENTITY linky-context-validate-all-win.label "Validate All Links in windows">
+<!ENTITY linky-context-validate-all-win.tooltip "Validate all links on page in new windows">
+<!ENTITY linky-context-validate-selected-tab.accesskey "">
+<!ENTITY linky-context-validate-selected-tab.label "Validate Selected Links in tabs">
+<!ENTITY linky-context-validate-selected-tab.tooltip "Validate selected links on page in new tabs">
+<!ENTITY linky-context-validate-selected-win.accesskey "">
+<!ENTITY linky-context-validate-selected-win.label "Validate Selected Links in windows">
+<!ENTITY linky-context-validate-selected-win.tooltip "Validate selected links on page in new windows">
+<!ENTITY linky-pref-context-validate.label "Validate links">
+<!ENTITY linky-pref-validator.caption "Validator">
+<!ENTITY linky-pref-validator.label "Use the following URL as validator">
+
+<!-- open links -->
+<!ENTITY linky-context-open-selected-tab.label "Open Selected Links in tabs">
+<!ENTITY linky-context-open-selected-tab.tooltip "Opens all links in a selection in new tabs">
+<!ENTITY linky-context-open-selected-tab.accesskey "">
+<!ENTITY linky-context-open-selected-tab.key "l">
+<!ENTITY linky-context-open-selected-tab.modifiers "control,shift">
+<!ENTITY linky-context-open-selected-win.label "Open Selected Links in windows">
+<!ENTITY linky-context-open-selected-win.tooltip "Opens all links in a selection in new windows">
+<!ENTITY linky-context-open-selected-win.accesskey "">
+<!ENTITY linky-context-open-all-tab.label "Open All Links in tabs">
+<!ENTITY linky-context-open-all-tab.tooltip "Opens all links on page in new tabs">
+<!ENTITY linky-context-open-all-tab.accesskey "">
+<!ENTITY linky-context-open-all-win.label "Open All Links in windows">
+<!ENTITY linky-context-open-all-win.tooltip "Opens all links on page in new windows">
+<!ENTITY linky-context-open-all-win.accesskey "">
+
+<!ENTITY linky-context-selected-text-tab.label "Open Selected Text Link in tabs">
+<!ENTITY linky-context-selected-text-tab.tooltip "Finds and opens link in plain text in a new tab">
+<!ENTITY linky-context-selected-text-tab.accesskey "">
+<!ENTITY linky-context-selected-text-win.label "Open Selected Text Link in windows">
+<!ENTITY linky-context-selected-text-win.tooltip "Finds and opens link in plain text in a new window">
+<!ENTITY linky-context-selected-text-win.accesskey "">
+<!ENTITY linky-context-pictures-tab.label "Open All Image Links in tabs">
+<!ENTITY linky-context-pictures-tab.tooltip "Open all links that appears to be linking to an image in new tabs">
+<!ENTITY linky-context-pictures-tab.accesskey "">
+<!ENTITY linky-context-pictures-win.label "Open All Image Links in windows">
+<!ENTITY linky-context-pictures-win.tooltip "Open all links that appears to be linking to an image in new windows">
+<!ENTITY linky-context-pictures-win.accesskey "">
+<!ENTITY linky-context-pictures-links-page-tab.label "Show All Image Links in one tab">
+<!ENTITY linky-context-pictures-links-page-tab.tooltip "Show all links that appears to be linking to an image in one new tab">
+<!ENTITY linky-context-pictures-links-page-tab.accesskey "">
+<!ENTITY linky-context-pictures-links-page-win.label "Show All Image Links in one window">
+<!ENTITY linky-context-pictures-links-page-win.tooltip "Shows all links that appears to be linking to an image in one new window">
+<!ENTITY linky-context-pictures-links-page-win.accesskey "">
+<!ENTITY linky-context-pictures-page-tab.label "Show All Images in one tab">
+<!ENTITY linky-context-pictures-page-tab.tooltip "Open all links that appears to be linking to an image in one new tab">
+<!ENTITY linky-context-pictures-page-tab.accesskey "">
+<!ENTITY linky-context-pictures-page-win.label "Show All Images in one window">
+<!ENTITY linky-context-pictures-page-win.tooltip "Open all links that appears to be linking to an image in one new window">
+<!ENTITY linky-context-pictures-page-win.accesskey "">
+
+
+
+
+<!ENTITY linky-select-title.label "Select Links">
+<!ENTITY linky-select-intro.label "Select the links you wish to open">
+<!ENTITY linky-select-checkall.label "Select all of the links">
+<!ENTITY linky-select-checkall.tooltip "Select all of the links above">
+<!ENTITY linky-select-checkall.accesskey "a">
+<!ENTITY linky-select-cancel.label "Cancel">
+<!ENTITY linky-select-cancel.tooltip "Close this dialog">
+<!ENTITY linky-select-cancel.accesskey "c">
+<!ENTITY linky-select-openlinks.label "Open selected links">
+<!ENTITY linky-select-openlinks.tooltip "Open all of the above selected links and close this dialog">
+<!ENTITY linky-select-openlinks.accesskey "s">
+<!ENTITY linky-select-checkvisited.label "Select already visited links">
+<!ENTITY linky-select-checkvisited.tooltip "Select links that you already visited">
+<!ENTITY linky-select-checkvisited.accesskey "v">
+<!ENTITY linky-select-sort-URL.label "Sort links by URL">
+<!ENTITY linky-select-sort-URL.tooltip "Sort all the links by URL">
+<!ENTITY linky-select-sort-org.label "Dont sort links">
+<!ENTITY linky-select-sort-org.tooltip "Sort all the links by the original order">
+<!ENTITY linky-select-sort-host.label "Sort links by hostname">
+<!ENTITY linky-select-sort-host.tooltip "Sort all the links by hostname">
+<!ENTITY linky-select-part-confirm.label "Select links that contain the following text:">
+<!ENTITY linky-select-part.label "Enter pattern to match">
+<!ENTITY linky-select-part.tooltip "Select links based on text input">
+<!ENTITY linky-select-partun-confirm.label "Select links that doesn\'t contain the following text:">
+<!ENTITY linky-select-partun.label "Enter pattern not to match">
+<!ENTITY linky-select-partun.tooltip "Deselect links based on text input">
+<!ENTITY linky-select-clipboard.label "Copy selected link to the clipboard">
+<!ENTITY linky-select-clipboard.tooltip "Copy the selected links to the clipboard">
+<!ENTITY linky-select-clipboard-all.label "Copy all links to the clipboard">
+<!ENTITY linky-select-clipboard-all.tooltip "Copy all the links to the clipboard">
+<!ENTITY linky-select-download.caption "Download Folder">
+<!ENTITY linky-select-download.label "Select other folder...">
+<!ENTITY linky-select-download.tooltip "Select the folder you wish to download to">
+<!ENTITY linky-select-download.accesskey "">
+<!ENTITY linky-select-unesc.label "Unescape Links">
+<!ENTITY linky-select-unesc.tooltip "Find escaped links inside the links">
+<!ENTITY linky-select-markvisit.label "Mark selected Links as visited">
+<!ENTITY linky-select-markvisit.tooltip "Mark the selected links as visited">
+<!ENTITY linky-select-partremove.label "Remove text from selected Links">
+<!ENTITY linky-select-partremove-confirm.label "Enter text to remove from selected links">
+<!ENTITY linky-select-partremove.tooltip "Remove text from selected links based on text input">
+<!ENTITY linky-select-commands.label "Commands">
+<!ENTITY linky-select-invert.label "Invert selection">
+<!ENTITY linky-select-invert.tooltip "Invert the current selected links">
+
+
+<!ENTITY linky-pref-showopen.label "Which open options to show">
+<!ENTITY linky-pref-showopen-tab.label "Show tab option">
+<!ENTITY linky-pref-showopen-tab.accesskey "t">
+<!ENTITY linky-pref-showopen-win.label "Show window option">
+<!ENTITY linky-pref-showopen-win.accesskey "w">
+<!ENTITY linky-pref-showopen-all.label "Show both options">
+<!ENTITY linky-pref-showopen-all.accesskey "b">
+
+<!ENTITY linky-pref-contexts-links.label "Show which Link menus">
+<!ENTITY linky-pref-contexts-pictures.label "Show which Image menus">
+<!ENTITY linky-pref-contexts-selectedlinks.label "Open selected links">
+<!ENTITY linky-pref-contexts-selectedtextlinks.label "Open selected text links">
+<!ENTITY linky-pref-contexts-alllinks.label "Open all links">
+<!ENTITY linky-pref-contexts-piclinks.label "Open all image links">
+<!ENTITY linky-pref-contexts-piclinksshow.label "Show all image links">
+<!ENTITY linky-pref-contexts-picshow.label "Show all images">
+
+<!ENTITY linky-pref-showselect.title "Select Links dialog">
+<!ENTITY linky-pref-showselect.label "Show Select Links dialog before opening more than">
+<!ENTITY linky-pref-showselect-after.label "links">
+<!ENTITY linky-pref-showselect.accesskey "d">
+<!ENTITY linky-pref-showselect-note.label "This can always be overridden by holding down SHIFT.">
+
+<!ENTITY linky-pref-adv-overwrite.label "Downloading Files">
+<!ENTITY linky-pref-adv-overwrite-intro.label "What to do when downloading files that already exists">
+<!ENTITY linky-pref-adv-overwrite-always.label "Always overwrite">
+<!ENTITY linky-pref-adv-overwrite-prompt.label "Prompt">
+<!ENTITY linky-pref-adv-overwrite-never.label "Never overwrite and skip download">
+<!ENTITY linky-pref-adv-overwrite-auto.label "Automatically find a new name">
+<!ENTITY linky-pref-adv-uninstall.label "Uninstall Linky">
+<!ENTITY linky-pref-adv-uninstall-confirm.label "Are you sure you want to uninstall Linky?">
+<!ENTITY linky-pref-adv-imgexts.label "Image Extensions">
+<!ENTITY linky-pref-adv-imgexts-intro.label "Treat the following extensions as images">
+
+<!ENTITY linky-pref-misc.caption "Miscellaneous">
+<!ENTITY linky-pref-adv-mailnews.label "Open mail and news links like mailto news snews">
+<!ENTITY linky-pref-general.label "General">
+<!ENTITY linky-pref-advanced.label "Advanced">
+<!ENTITY linky-pref-developer.label "Show debug information in the Error Console">
+
+<!ENTITY linky-pref-download-directory.caption "Download Directory">
+<!ENTITY linky-pref-download-directory.label "Files are saved into this folder">
+<!ENTITY linky-pref-download-directory-select.label "Select folder...">
+<!ENTITY linky-pref-download-directory-remember.label "Remember last download directory">
+
+<!ENTITY linky-pref-about.label "About">
+<!ENTITY linky.about "Linky is made by Henrik Gemal">
+<!ENTITY linky.about.homepage.label "Linky homepage:">
+<!ENTITY linky.about.donate.label "Linky donations:">
+
+<!ENTITY linky-select-bookmark.label "Bookmark selected links">
+<!ENTITY linky-select-bookmark.tooltip "Create a bookmark group of the selected links">
+
+<!ENTITY linky-context-info.label "Link Info not available">

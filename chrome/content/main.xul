@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay SYSTEM "chrome://linky/locale/main.dtd">
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="linky">
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="bundle_linky" src="chrome://linky/locale/main.properties"/>
+	</stringbundleset>
+	<script src="shared.js"/>
+	<script src="main.js"/>
+	<keyset id="mainKeyset">
+		<key key="&linky-context-open-selected-tab.key;" modifiers="&linky-context-open-selected-tab.modifiers;" command="cmd_linky.selected-tab"/>
+	</keyset>
+	<commandset id="mainCommandSet">
+		<command id="cmd_linky.selected-tab" oncommand="linkyContext.doLinks(1, true, event)"/>
+	</commandset>
+	<toolbarpalette id="BrowserToolbarPalette">
+		<toolbarbutton id="linky-toolbar" label="&linky.label;" tooltiptext="&linky.label;" type="menu" class="toolbarbutton-1 chromeclass-toolbar-additional">
+			<menupopup onpopupshowing="linkyContext.doContext(1)">
+				<menuitem id="linky-context-info1" label="&linky-context-info.label;" disabled="true"/>
+				<menuseparator/>
+				<menuitem accesskey="&linky-context-open-selected-tab.accesskey;" id="linky-context-open-selected-tab1" label="&linky-context-open-selected-tab.label;" oncommand="linkyContext.doLinks(1, true, event)" tooltiptext="&linky-context-open-selected-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-open-selected-win.accesskey;" id="linky-context-open-selected-win1" label="&linky-context-open-selected-win.label;" oncommand="linkyContext.doLinks(2, true, event)" tooltiptext="&linky-context-open-selected-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-selected-text-tab.accesskey;" id="linky-context-selected-text-tab1" label="&linky-context-selected-text-tab.label;" oncommand="linkyContext.doSelectedText(1, event)" tooltiptext="&linky-context-selected-text-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-selected-text-win.accesskey;" id="linky-context-selected-text-win1" label="&linky-context-selected-text-win.label;" oncommand="linkyContext.doSelectedText(2, event)" tooltiptext="&linky-context-selected-text-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-open-all-tab.accesskey;" id="linky-context-open-all-tab1" label="&linky-context-open-all-tab.label;" oncommand="linkyContext.doLinks(1, false, event)" tooltiptext="&linky-context-open-all-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-open-all-win.accesskey;" id="linky-context-open-all-win1" label="&linky-context-open-all-win.label;" oncommand="linkyContext.doLinks(2, false, event)" tooltiptext="&linky-context-open-all-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-pictures-tab.accesskey;" id="linky-context-pictures-tab1" label="&linky-context-pictures-tab.label;" oncommand="linkyContext.doAllPics(1, event)" tooltiptext="&linky-context-pictures-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-pictures-win.accesskey;" id="linky-context-pictures-win1" label="&linky-context-pictures-win.label;" oncommand="linkyContext.doAllPics(2, event)" tooltiptext="&linky-context-pictures-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-pictures-links-page-tab.accesskey;" id="linky-context-pictures-links-page-tab1" label="&linky-context-pictures-links-page-tab.label;" oncommand="linkyContext.doAllPics(3, event)" tooltiptext="&linky-context-pictures-links-page-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-pictures-links-page-win.accesskey;" id="linky-context-pictures-links-page-win1" label="&linky-context-pictures-links-page-win.label;" oncommand="linkyContext.doAllPics(4, event)" tooltiptext="&linky-context-pictures-links-page-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-pictures-page-tab.accesskey;" id="linky-context-pictures-page-tab1" label="&linky-context-pictures-page-tab.label;" oncommand="linkyContext.doImages(3, event)" tooltiptext="&linky-context-pictures-page-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-pictures-page-win.accesskey;" id="linky-context-pictures-page-win1" label="&linky-context-pictures-page-win.label;" oncommand="linkyContext.doImages(4, event)" tooltiptext="&linky-context-pictures-page-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-clipboard-all.accesskey;" id="linky-context-clipboard-all1" label="&linky-context-clipboard-all.label;" oncommand="linkyContext.doClipboard(false, event)" tooltiptext="&linky-context-clipboard-all.tooltip;"/>
+				<menuitem accesskey="&linky-context-clipboard-selected.accesskey;" id="linky-context-clipboard-selected1" label="&linky-context-clipboard-selected.label;" oncommand="linkyContext.doClipboard(true, event)" tooltiptext="&linky-context-clipboard-selected.tooltip;"/>
+				<menuitem accesskey="&linky-context-validate-all-tab.accesskey;" id="linky-context-validate-all-tab1" label="&linky-context-validate-all-tab.label;" oncommand="linkyContext.doValidate(1, false, event)" tooltiptext="&linky-context-validate-all-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-validate-all-win.accesskey;" id="linky-context-validate-all-win1" label="&linky-context-validate-all-win.label;" oncommand="linkyContext.doValidate(2, false, event)" tooltiptext="&linky-context-validate-all-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-validate-selected-tab.accesskey;" id="linky-context-validate-selected-tab1" label="&linky-context-validate-selected-tab.label;" oncommand="linkyContext.doValidate(1, true, event)" tooltiptext="&linky-context-validate-selected-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-validate-selected-win.accesskey;" id="linky-context-validate-selected-win1" label="&linky-context-validate-selected-win.label;" oncommand="linkyContext.doValidate(2, true, event)" tooltiptext="&linky-context-validate-selected-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-download-all.accesskey;" id="linky-context-download-all1" label="&linky-context-download-all.label;" oncommand="linkyContext.doDownload(false, event)" tooltiptext="&linky-context-download-all.tooltip;"/>
+				<menuitem accesskey="&linky-context-download-selected.accesskey;" id="linky-context-download-selected1" label="&linky-context-download-selected.label;" oncommand="linkyContext.doDownload(true, event)" tooltiptext="&linky-context-download-selected.tooltip;"/>
+			</menupopup>
+		</toolbarbutton>
+	</toolbarpalette>
+	<popup id="contentAreaContextMenu">
+		<menu id="linky-context" label="&linky.label;" accesskey="&linky.accesskey;" insertbefore="context-sep-properties" class="menu-iconic">
+			<menupopup onpopupshowing="linkyContext.doContext()">
+				<menuitem id="linky-context-info" label="&linky-context-info.label;" disabled="true"/>
+				<menuseparator/>
+				<menuitem accesskey="&linky-context-open-selected-tab.accesskey;" id="linky-context-open-selected-tab" label="&linky-context-open-selected-tab.label;" oncommand="linkyContext.doLinks(1, true, event)" tooltiptext="&linky-context-open-selected-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-open-selected-win.accesskey;" id="linky-context-open-selected-win" label="&linky-context-open-selected-win.label;" oncommand="linkyContext.doLinks(2, true, event)" tooltiptext="&linky-context-open-selected-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-selected-text-tab.accesskey;" id="linky-context-selected-text-tab" label="&linky-context-selected-text-tab.label;" oncommand="linkyContext.doSelectedText(1, event)" tooltiptext="&linky-context-selected-text-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-selected-text-win.accesskey;" id="linky-context-selected-text-win" label="&linky-context-selected-text-win.label;" oncommand="linkyContext.doSelectedText(2, event)" tooltiptext="&linky-context-selected-text-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-open-all-tab.accesskey;" id="linky-context-open-all-tab" label="&linky-context-open-all-tab.label;" oncommand="linkyContext.doLinks(1, false, event)" tooltiptext="&linky-context-open-all-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-open-all-win.accesskey;" id="linky-context-open-all-win" label="&linky-context-open-all-win.label;" oncommand="linkyContext.doLinks(2, false, event)" tooltiptext="&linky-context-open-all-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-pictures-tab.accesskey;" id="linky-context-pictures-tab" label="&linky-context-pictures-tab.label;" oncommand="linkyContext.doAllPics(1, event)" tooltiptext="&linky-context-pictures-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-pictures-win.accesskey;" id="linky-context-pictures-win" label="&linky-context-pictures-win.label;" oncommand="linkyContext.doAllPics(2, event)" tooltiptext="&linky-context-pictures-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-pictures-links-page-tab.accesskey;" id="linky-context-pictures-links-page-tab" label="&linky-context-pictures-links-page-tab.label;" oncommand="linkyContext.doAllPics(3, event)" tooltiptext="&linky-context-pictures-links-page-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-pictures-links-page-win.accesskey;" id="linky-context-pictures-links-page-win" label="&linky-context-pictures-links-page-win.label;" oncommand="linkyContext.doAllPics(4, event)" tooltiptext="&linky-context-pictures-links-page-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-pictures-page-tab.accesskey;" id="linky-context-pictures-page-tab" label="&linky-context-pictures-page-tab.label;" oncommand="linkyContext.doImages(3, event)" tooltiptext="&linky-context-pictures-page-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-pictures-page-win.accesskey;" id="linky-context-pictures-page-win" label="&linky-context-pictures-page-win.label;" oncommand="linkyContext.doImages(4, event)" tooltiptext="&linky-context-pictures-page-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-clipboard-all.accesskey;" id="linky-context-clipboard-all" label="&linky-context-clipboard-all.label;" oncommand="linkyContext.doClipboard(false, event)" tooltiptext="&linky-context-clipboard-all.tooltip;"/>
+				<menuitem accesskey="&linky-context-clipboard-selected.accesskey;" id="linky-context-clipboard-selected" label="&linky-context-clipboard-selected.label;" oncommand="linkyContext.doClipboard(true, event)" tooltiptext="&linky-context-clipboard-selected.tooltip;"/>
+				<menuitem accesskey="&linky-context-validate-all-tab.accesskey;" id="linky-context-validate-all-tab" label="&linky-context-validate-all-tab.label;" oncommand="linkyContext.doValidate(1, false, event)" tooltiptext="&linky-context-validate-all-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-validate-all-win.accesskey;" id="linky-context-validate-all-win" label="&linky-context-validate-all-win.label;" oncommand="linkyContext.doValidate(2, false, event)" tooltiptext="&linky-context-validate-all-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-validate-selected-tab.accesskey;" id="linky-context-validate-selected-tab" label="&linky-context-validate-selected-tab.label;" oncommand="linkyContext.doValidate(1, true, event)" tooltiptext="&linky-context-validate-selected-tab.tooltip;"/>
+				<menuitem accesskey="&linky-context-validate-selected-win.accesskey;" id="linky-context-validate-selected-win" label="&linky-context-validate-selected-win.label;" oncommand="linkyContext.doValidate(2, true, event)" tooltiptext="&linky-context-validate-selected-win.tooltip;"/>
+				<menuitem accesskey="&linky-context-download-all.accesskey;" id="linky-context-download-all" label="&linky-context-download-all.label;" oncommand="linkyContext.doDownload(false, event)" tooltiptext="&linky-context-download-all.tooltip;"/>
+				<menuitem accesskey="&linky-context-download-selected.accesskey;" id="linky-context-download-selected" label="&linky-context-download-selected.label;" oncommand="linkyContext.doDownload(true, event)" tooltiptext="&linky-context-download-selected.tooltip;"/>
+			</menupopup>
+		</menu>
+	</popup>
+</overlay>
