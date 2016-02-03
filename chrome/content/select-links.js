@@ -404,4 +404,4 @@ LinkySelect.prototype.doDir = function() {
 	}
 }
 
-const linkySelect = new LinkySelect;
+window.linkySelect = new LinkySelect;

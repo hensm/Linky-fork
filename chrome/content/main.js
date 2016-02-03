@@ -838,4 +838,4 @@ LinkyContext.prototype.myfoundHeaderInfo = function(aFileInfo, aData) {
 }
 
 // create the object
-const linkyContext = new LinkyContext();
+window.linkyContext = new LinkyContext();

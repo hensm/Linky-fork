@@ -41,4 +41,4 @@ LinkyShared.prototype.trace = function(t, u, a) {
 	}
 }
 
-const linkyShared = new LinkyShared;
+window.linkyShared = new LinkyShared;

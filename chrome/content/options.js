@@ -14,4 +14,4 @@ LinkyOption.prototype.startup = function() {
 	}
 }
 
-const linkyOption = new LinkyOption;
+window.linkyOption = new LinkyOption;
