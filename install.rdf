@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+	<Description about="urn:mozilla:install-manifest">
+		<em:id>linky@gemal.dk</em:id>
+		<em:name>Linky</em:name>
+		<em:version>3.0.0.1-signed.1-let-fixed</em:version>
+		<em:type>2</em:type>
+		<em:description>Open/download/validate/copy links and pictures in new tabs or windows</em:description>
+		<em:creator>Henrik Gemal</em:creator>
+		<em:homepageURL>http://gemal.dk/mozilla/linky.html</em:homepageURL>
+		<em:contributor>Stefan A. Moeller</em:contributor>
+		<em:contributor>Anaka Mako</em:contributor>
+		<em:optionsURL>chrome://linky/content/options.xul</em:optionsURL>
+		<em:iconURL>chrome://linky/skin/icon.png</em:iconURL>
+		<em:targetApplication>
+			<Description>
+				<!-- firefox -->
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>0.7</em:minVersion>
+				<em:maxVersion>3.7a2pre</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		<em:targetApplication>
+			<Description>
+				<!-- seamonkey -->
+				<em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+				<em:minVersion>2.0</em:minVersion>
+				<em:maxVersion>2.1a1pre</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		<em:targetApplication>
+			<Description>
+				<!-- flock -->
+				<em:id>{a463f10c-3994-11da-9945-000d60ca027b}</em:id>
+				<em:minVersion>0.5</em:minVersion>
+				<em:maxVersion>2.*</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+	</Description>
+</RDF>
