@@ -33,3 +33,5 @@ pref("extensions.linky.download.overwrite", 3);
 pref("extensions.linky.download.directory", "");
 // remember last download directory
 pref("extensions.linky.download.directory.remember", true);
+
+pref("extensions.linky.timer_delay", 2000);

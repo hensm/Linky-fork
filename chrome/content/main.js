@@ -1,6 +1,9 @@
+Components.utils.import("resource://gre/modules/Timer.jsm");
+
 // Put everything into a namespace or that we dont pollute
 var LinkyContext = function() {
 	this.max_check = 300;
+	this.current_delay = 0;
 }
 
 // get current selection as a string
@@ -152,63 +155,71 @@ LinkyContext.prototype.setDisabled = function(aElements, aIndexOf) {
 
 // Open a link either in a tab or a window
 LinkyContext.prototype.openLink = function(lnk, typ, doc) {
-	if (!lnk) {
-		linkyShared.trace("lnk in openLink is empty", 0);
-		return;
-	}
-	// special case mail and news links
-	if (this.isLinkType("mailto:", lnk) || this.isLinkType("news:", lnk) || this.isLinkType("snews:", lnk)) {
-		try {
-			window.loadURI(lnk);
-		} catch(err) {
-			linkyShared.trace("Unable to open mail or news link " + lnk, 1, err);
+	var s = this;
+	setTimeout(function () {
+		if (!lnk) {
+			linkyShared.trace("lnk in openLink is empty", 0);
+			return;
 		}
-	} else {
-		if (typ == 1) {
-			var browser;
+		// special case mail and news links
+		if (s.isLinkType("mailto:", lnk) || s.isLinkType("news:", lnk) || s.isLinkType("snews:", lnk)) {
 			try {
-				browser = getBrowser();
-			} catch (ex if ex instanceof ReferenceError) {
-				var windowMediator = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
-				var browserWin = windowMediator.getMostRecentWindow("navigator:browser");
-				if (!browserWin) {
-					window.openDialog(getBrowserURL(), "_blank", "chrome,all,dialog=no", lnk, null, this.getReferer(document.commandDispatcher.focusedWindow.document));
-					return;
-				} else {
-					browser = browserWin.getBrowser();
-				}
-			}
-			try {
-				browser.addTab(lnk, this.getReferer(document.commandDispatcher.focusedWindow.document));
+				window.loadURI(lnk);
 			} catch(err) {
-				linkyShared.trace("Unable to open " + lnk, 1, err);
-			}
-		} else if (typ == 2) {
-			try {
-				document.commandDispatcher.focusedWindow.open(lnk);
-			} catch(err) {
-				linkyShared.trace("Unable to open " + lnk, 1, err);
-			}
-		} else if (typ == 3) {
-			if (!doc) {
-				linkyShared.trace("Document is undefined", 1);
-			} else {
-				var body = doc.getElementsByTagName("body")[0];
-				if (!body) {
-					body = doc.createElement("body");
-					doc.appendChild(body);
-				}
-				var img = doc.createElement("img");
-				img.src = lnk;
-				img.setAttribute("alt", lnk);
-				img.setAttribute("title", lnk);
-				body.appendChild(img);
-				var br = doc.createElement("br");
-				body.appendChild(br);
+				linkyShared.trace("Unable to open mail or news link " + lnk, 1, err);
 			}
 		} else {
-			linkyShared.trace("openLink called with unknown typ:" + typ, 1);
+			if (typ == 1) {
+				var browser;
+				try {
+					browser = getBrowser();
+				} catch (ex if ex instanceof ReferenceError) {
+					var windowMediator = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
+					var browserWin = windowMediator.getMostRecentWindow("navigator:browser");
+					if (!browserWin) {
+						window.openDialog(getBrowserURL(), "_blank", "chrome,all,dialog=no", lnk, null, s.getReferer(document.commandDispatcher.focusedWindow.document));
+						return;
+					} else {
+						browser = browserWin.getBrowser();
+					}
+				}
+				try {
+					browser.addTab(lnk, s.getReferer(document.commandDispatcher.focusedWindow.document));
+				} catch(err) {
+					linkyShared.trace("Unable to open " + lnk, 1, err);
+				}
+			} else if (typ == 2) {
+				try {
+					document.commandDispatcher.focusedWindow.open(lnk);
+				} catch(err) {
+					linkyShared.trace("Unable to open " + lnk, 1, err);
+				}
+			} else if (typ == 3) {
+				if (!doc) {
+					linkyShared.trace("Document is undefined", 1);
+				} else {
+					var body = doc.getElementsByTagName("body")[0];
+					if (!body) {
+						body = doc.createElement("body");
+						doc.appendChild(body);
+					}
+					var img = doc.createElement("img");
+					img.src = lnk;
+					img.setAttribute("alt", lnk);
+					img.setAttribute("title", lnk);
+					body.appendChild(img);
+					var br = doc.createElement("br");
+					body.appendChild(br);
+				}
+			} else {
+				linkyShared.trace("openLink called with unknown typ:" + typ, 1);
+			}
 		}
+
+	}, this.current_delay);
+	if (this.max_delay && this.current_delay >= this.max_delay) {
+		this.current_delay = 0;
+		this.max_delay = null;
 	}
 }
 

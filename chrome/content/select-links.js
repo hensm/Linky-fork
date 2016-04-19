@@ -350,19 +350,26 @@ LinkySelect.prototype.openLinks = function() {
 			} else {
 				opener.linkyContext.openLink(i, this.opentype);
 			}
+
+			if (document.getElementById("timer").checked) {
+				opener.linkyContext.current_delay += this.pref.getIntPref("extensions.linky.timer_delay");
+			}
 		}
+
+		opener.linkyContext.max_delay = opener.linkyContext.current_delay;
 	}
+
 	self.close();
 }
 
 LinkySelect.prototype.startup = function() {
+	var prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+	this.pref = prefService.getBranch(null);
 	// if we're doing download change the text and add Download Folder
 	if (this.download) {
 		document.getElementById("linky-select-intro").label = opener.document.getElementById("bundle_linky").getString("linky-select-intro");
 		document.getElementById("linky-select-openlinks").label = opener.document.getElementById("bundle_linky").getString("linky-select-openlinks");
 		document.getElementById("linky-select-openlinks").setAttribute("tooltiptext", opener.document.getElementById("bundle_linky").getString("linky-select-openlinks-tooltip"));
-		var prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-		this.pref = prefService.getBranch(null);
 		this.pref_dir = false;
 		try {
 			this.pref_dir = this.pref.getComplexValue("extensions.linky.download.directory", Components.interfaces.nsILocalFile);

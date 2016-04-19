@@ -28,6 +28,7 @@
 			<preference id="linky_imgexts" name="extensions.linky.imgexts" type="string" />
 			<preference id="linky_open_mailnews" name="extensions.linky.open_mailnews" type="bool" />
 			<preference id="linky_developer" name="extensions.linky.developer" type="bool" />
+			<preference id="linky_timer_delay" name="extensions.linky.timer_delay" type="int" />
 		</preferences>
 		<tabbox>
 			<tabs>
@@ -84,6 +85,10 @@
 							<vbox flex="1">
 								<description>&linky-pref-showselect-note.label;</description>
 							</vbox>
+							<hbox align="center">
+								<label value="&linky-pref-timer.label;"/>
+								<textbox type="number" preference="linky_timer_delay"/>
+							</hbox>
 						</vbox>
 					</groupbox>
 				</tabpanel>

@@ -29,6 +29,7 @@
 		<hbox>
 			<checkbox accesskey="&linky-select-checkall.accesskey;" checked="true" id="cbox" label="&linky-select-checkall.label;" oncommand="linkySelect.checkAll();" tooltiptext="&linky-select-checkall.tooltip;"/>
 			<checkbox accesskey="&linky-select-checkvisited.accesskey;" checked="true" id="cvbox" label="&linky-select-checkvisited.label;" oncommand="linkySelect.checkVisited();" tooltiptext="&linky-select-checkvisited.tooltip;"/>
+			<checkbox id="timer" checked="false" label="&linky-select-timer.label;"></checkbox>
 		</hbox>
 	</groupbox>
  	<groupbox id="linky-select-download" hidden="true">

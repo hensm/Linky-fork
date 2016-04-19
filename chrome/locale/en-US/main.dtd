@@ -181,3 +181,7 @@
 <!ENTITY linky-select-bookmark.tooltip "Create a bookmark group of the selected links">
 
 <!ENTITY linky-context-info.label "Link Info not available">
+
+
+<!ENTITY linky-select-timer.label "Delay opening of each link">
+<!ENTITY linky-pref-timer.label "Timer delay">
